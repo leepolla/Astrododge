@@ -43,6 +43,8 @@ Libraries we are definitely using:
   
   Bootstrap,
   
+  Phaser
+  
 Libraries and APIs we might use:
 
   purgomalum (to filter inappropriateness),
