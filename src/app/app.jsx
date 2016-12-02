@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './app.css';
-import './outerPage/outerPage.css';
+import '../outerPage/outerPage.css';
+import '../gameApp/phaser.js';
 
 
 class App extends Component {
