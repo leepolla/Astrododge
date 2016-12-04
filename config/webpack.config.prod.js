@@ -10,10 +10,10 @@ var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
 //Phaser config
-var phaserModule = path.join(__dirname, '/node_modules/phaser/');
-var phaser = path.join(phaserModule, 'build/custom/phaser-split.js'),
-  pixi = path.join(phaserModule, 'build/custom/pixi.js'),
-  p2 = path.join(phaserModule, 'build/custom/p2.js');
+var phaserModule = path.join(__dirname, '.../v2/node_modules/phaser/');
+var phaser = path.join(phaserModule, '.../v2/build/custom/phaser-split.js'),
+  pixi = path.join(phaserModule, '.../v2/build/custom/pixi.js'),
+  p2 = path.join(phaserModule, '.../v2/build/custom/p2.js');
 
 
 function ensureSlash(path, needsSlash) {

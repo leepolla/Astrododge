@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './app.css';
 import '../outerPage/outerPage.css';
-import '../gameApp/phaser.js';
 
 //Phaser
-import 'pixi.js';
-import 'p2';
-import 'phaser';
+import '../gameApp/v2/build/custom/pixi.js';
+import '../gameApp/v2/build/custom/p2';
+import '../gameApp/v2/build/custom/phaser';
 
 
 class App extends Component {
