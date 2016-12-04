@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-<<<<<<< HEAD:src/app/app.jsx
 import './app.css';
-=======
-import './App.css';
 import './outerPage/outerPage.css';
->>>>>>> 048c8d9b67b69b75efe7aaa228d46078a22a1450:src/App.js
 
 class App extends Component {
   render() {
