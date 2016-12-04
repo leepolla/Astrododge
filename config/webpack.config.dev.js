@@ -10,10 +10,10 @@ var getClientEnvironment = require('./env');
 var paths = require('./paths');
 
 //Phaser config
-var phaserModule = path.join(__dirname, '/node_modules/phaser/');
-var phaser = path.join(phaserModule, 'build/custom/phaser-split.js'),
-  pixi = path.join(phaserModule, 'build/custom/pixi.js'),
-  p2 = path.join(phaserModule, 'build/custom/p2.js');
+var phaserModule = path.join(__dirname, 'node_modules/phaser/');
+var phaser = path.join(phaserModule, '../src/gameApp/v2/build/custom/phaser-split.js'),
+  pixi = path.join(phaserModule, '../src/gameApp/v2/build/custom/pixi.js'),
+  p2 = path.join(phaserModule, '../src/gameApp/v2/build/custom/p2.js');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -157,10 +157,9 @@ module.exports = {
       },
 
       //Phaser config
-      { 
-        test: /pixi.js/, 
-        loader: "script"
-      }
+      { test: /pixi\.js/, loader: 'expose?PIXI' },
+      { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
+      { test: /p2\.js/, loader: 'expose?p2' }
     ]
   },
   

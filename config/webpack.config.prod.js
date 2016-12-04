@@ -10,10 +10,10 @@ var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
 //Phaser config
-var phaserModule = path.join(__dirname, '.../v2/node_modules/phaser/');
-var phaser = path.join(phaserModule, '.../v2/build/custom/phaser-split.js'),
-  pixi = path.join(phaserModule, '.../v2/build/custom/pixi.js'),
-  p2 = path.join(phaserModule, '.../v2/build/custom/p2.js');
+var phaserModule = path.join(__dirname, 'node_modules/phaser/');
+var phaser = path.join(phaserModule, '../src/gameApp/v2/build/custom/phaser-split.js'),
+  pixi = path.join(phaserModule, '../src/gameApp/v2/build/custom/pixi.js'),
+  p2 = path.join(phaserModule, '../src/gameApp/v2/build/custom/p2.js');
 
 
 function ensureSlash(path, needsSlash) {
@@ -168,10 +168,9 @@ module.exports = {
       },
 
       //Phaser config
-      { 
-        test: /pixi.js/, 
-        loader: "script"
-      }
+      { test: /pixi\.js/, loader: 'expose?PIXI' },
+      { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
+      { test: /p2\.js/, loader: 'expose?p2' }
     ]
   },
   
