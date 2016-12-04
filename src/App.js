@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './outerPage/outerPage.css';
+import './outerPage/header.JPG';
 
 class App extends Component {
   render() {
