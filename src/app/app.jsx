@@ -4,6 +4,11 @@ import './app.css';
 import '../outerPage/outerPage.css';
 import '../gameApp/phaser.js';
 
+//Phaser
+import 'pixi.js';
+import 'p2';
+import 'phaser';
+
 
 class App extends Component {
   render() {
