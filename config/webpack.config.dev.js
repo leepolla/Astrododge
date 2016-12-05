@@ -9,11 +9,11 @@ var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeMod
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
 
-//Phaser config
-var phaserModule = path.join(__dirname, 'node_modules/phaser/');
-var phaser = path.join(phaserModule, '../src/gameApp/v2/build/custom/phaser-split.js'),
-  pixi = path.join(phaserModule, '../src/gameApp/v2/build/custom/pixi.js'),
-  p2 = path.join(phaserModule, '../src/gameApp/v2/build/custom/p2.js');
+// Phaser webpack config
+var phaserModule = path.join(__dirname, '/../node_modules/phaser/')
+var phaser = path.join(phaserModule, 'build/custom/phaser-split.js')
+var pixi = path.join(phaserModule, 'build/custom/pixi.js')
+var p2 = path.join(phaserModule, 'build/custom/p2.js')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -88,11 +88,11 @@ module.exports = {
 
       //Phaser config
       'phaser': phaser,
-      'pixi.js': pixi,
+      'pixi': pixi,
       'p2': p2
     }
   },
-  
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -110,7 +110,7 @@ module.exports = {
         include: paths.appSrc,
         loader: 'babel',
         query: {
-          
+
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/react-scripts/
           // directory for faster rebuilds. We use findCacheDir() because of:
@@ -162,7 +162,7 @@ module.exports = {
       { test: /p2\.js/, loader: 'expose?p2' }
     ]
   },
-  
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [

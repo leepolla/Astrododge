@@ -4,9 +4,9 @@ import './app.css';
 import '../outerPage/outerPage.css';
 
 //Phaser
-import '../gameApp/v2/build/custom/pixi.js';
-import '../gameApp/v2/build/custom/p2';
-import '../gameApp/v2/build/custom/phaser';
+import 'pixi'
+import 'p2'
+import Phaser from 'phaser'
 
 
 class App extends Component {

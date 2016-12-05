@@ -9,11 +9,11 @@ var url = require('url');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
-//Phaser config
-var phaserModule = path.join(__dirname, 'node_modules/phaser/');
-var phaser = path.join(phaserModule, '../src/gameApp/v2/build/custom/phaser-split.js'),
-  pixi = path.join(phaserModule, '../src/gameApp/v2/build/custom/pixi.js'),
-  p2 = path.join(phaserModule, '../src/gameApp/v2/build/custom/p2.js');
+// Phaser webpack config
+var phaserModule = path.join(__dirname, '../node_modules/phaser/')
+var phaser = path.join(phaserModule, 'build/custom/phaser-split.js')
+var pixi = path.join(phaserModule, 'build/custom/pixi.js')
+var p2 = path.join(phaserModule, 'build/custom/p2.js')
 
 
 function ensureSlash(path, needsSlash) {
@@ -91,13 +91,14 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+
       //Phaser config
       'phaser': phaser,
-      'pixi.js': pixi,
+      'pixi': pixi,
       'p2': p2
     }
   },
-  
+
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
@@ -114,7 +115,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: 'babel',
-        
+
       },
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
@@ -173,7 +174,7 @@ module.exports = {
       { test: /p2\.js/, loader: 'expose?p2' }
     ]
   },
-  
+
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
