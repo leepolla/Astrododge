@@ -1,6 +1,6 @@
-import Phaser from 'phaser'
-import Mushroom from '../sprites/Mushroom'
-import {setResponsiveWidth} from '../utils'
+import Phaser from 'phaser';
+import Mushroom from './sprites/Mushroom';
+import {setResponsiveWidth} from './utils';
 
 export default class extends Phaser.State {
   init () {
@@ -8,8 +8,8 @@ export default class extends Phaser.State {
   };
 
   preload () {
-    this.load.image('space', '../assets/space.png'); //incorrect path for some reason, broke
-    this.load.image('alex', 'src/gameApp/assets/alex.png'); //also broke
+    this.load.image('space', './assets/space.png'); //incorrect path for some reason, broke
+    this.load.image('alex', './assets/alex.png'); //also broke
   };
 
   create () {

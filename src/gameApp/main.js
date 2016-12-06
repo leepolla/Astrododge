@@ -4,7 +4,7 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-import GameState from './states/Game';
+import GameState from './Game';
 
 class Game extends Phaser.Game {
 
