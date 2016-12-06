@@ -8,9 +8,7 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-
 class App extends Component {
-  
   render() {
     return (
       <div className="App">
@@ -27,3 +25,4 @@ class App extends Component {
 }
 export default App;
 export {default as Game} from '../gameApp/main.js';
+

@@ -162,7 +162,6 @@ module.exports = {
       { test: /p2\.js/, loader: 'expose?p2' }
     ]
   },
-
   // We use PostCSS for autoprefixing only.
   postcss: function() {
     return [
