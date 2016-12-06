@@ -1,34 +1,31 @@
-/* globals __DEV__ */
 import Phaser from 'phaser'
 import Mushroom from '../sprites/Mushroom'
 import {setResponsiveWidth} from '../utils'
 
 export default class extends Phaser.State {
-  init () {};
-  preload () {};
+  init () {
+    this.stage.backgroundColor = '#000000';
+  };
+
+  preload () {
+    this.load.image('space', '../assets/space.png'); //incorrect path for some reason, broke
+    this.load.image('alex', 'src/gameApp/assets/alex.png'); //also broke
+  };
 
   create () {
-    let banner = this.add.text(this.game.world.centerX, this.game.height - 30, 'Phaser + ES6 + Webpack');
-    banner.font = 'Nunito';
-    banner.fontSize = 40;
-    banner.fill = '#77BFA3';
-    banner.anchor.setTo(0.5);
-
-    this.mushroom = new Mushroom({
+    this.game.add.sprite(0, 0, 'alex'); //will be unbroke when images are loaded
+    this.alex = new Mushroom({
       game: this.game,
       x: this.game.world.centerX,
       y: this.game.world.centerY,
-      asset: 'mushroom'
+      asset: 'alex'
     });
 
     // set the sprite width to 30% of the game width
-    setResponsiveWidth(this.mushroom, 30, this.game.world);
-    this.game.add.existing(this.mushroom);
+    setResponsiveWidth(this.alex, 30, this.game.world);
+    this.game.add.existing(this.alex);
   }
 
   render () {
-    if (true) {
-      this.game.debug.spriteInfo(this.mushroom, 32, 32);
-    }
   }
 }

@@ -3,11 +3,6 @@ import logo from './logo.svg';
 import './app.css';
 import '../outerPage/outerPage.css';
 
-//Phaser
-import 'pixi';
-import 'p2';
-import Phaser from 'phaser';
-
 class App extends Component {
   render() {
     return (
