@@ -3,7 +3,6 @@ import Phaser from 'phaser'
 export default class extends Phaser.State {
   init () {
     this.stage.backgroundColor = '#EDEEC9'
-    this.fontsReady = true;
   }
 
   preload () {
@@ -16,13 +15,7 @@ export default class extends Phaser.State {
   }
 
   render () {
-    if (this.fontsReady) {
       this.state.start('Splash')
-    }
-  }
-
-  fontsLoaded () {
-    this.fontsReady = true
   }
 
 }

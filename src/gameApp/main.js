@@ -1,3 +1,5 @@
+//Boilerplate framework from https://github.com/lean/phaser-es6-webpack
+
 import 'pixi'
 import 'p2'
 import Phaser from 'phaser'
@@ -22,4 +24,4 @@ class Game extends Phaser.Game {
   }
 }
 
-var game = new Game()
+var game = new Game();
