@@ -4,12 +4,13 @@ import './app.css';
 import '../outerPage/outerPage.css';
 
 //Phaser
-import 'pixi'
-import 'p2'
-import Phaser from 'phaser'
+import 'pixi';
+import 'p2';
+import Phaser from 'phaser';
 
 
 class App extends Component {
+  
   render() {
     return (
       <div className="App">
@@ -20,10 +21,9 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div id="game"></div>
       </div>
     );
   }
 }
-
 export default App;
+export {default as Game} from '../gameApp/main.js';
