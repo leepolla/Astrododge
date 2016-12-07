@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+//import ReactDOM from 'react-dom';
 
-class Leaderboard extends React.Component {
+class Leaderboard extends Component {
     
     render() {
 
@@ -16,21 +17,25 @@ class Leaderboard extends React.Component {
                         <th>Name</th>
                         <th>Score</th>
                     </tr>
-                    {
-                        /*this.state.scores.map((entry) => (
-                            <tr key={entry.score}>
-                                <td>{entry.rank}</td>
-                                <td>{entry.user}</td>
-                                <td>{entry.score}</td>
-                            </tr>
-                        )) */
-                    }
+                    
                 </table>
             </div>
         );
     }
 }
 
+export default Leaderboard;
+
 //var app = document.getElementById("app");
 
 //ReactDOM.render(<Leaderboard />, app);
+
+//{
+                    //     this.state.scores.map((entry) => (
+                    //         <tr key={entry.score}>
+                    //             <td>{entry.rank}</td>
+                    //             <td>{entry.user}</td>
+                    //             <td>{entry.score}</td>
+                    //         </tr>
+                    //     )) 
+                    // }

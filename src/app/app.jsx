@@ -20,5 +20,5 @@ class App extends Component {
   }
 }
 export default App;
-export {default as Game} from '../gameApp/main.js';
+//export {default as Game} from '../gameApp/main.js';
 

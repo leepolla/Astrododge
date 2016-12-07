@@ -1,22 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router';
 import App from './app/app';
-import SwitchContainer from './switchContainer.js';
+import Game from './gameApp/main.js';
+//import SwitchContainer from './switchContainer.js';
 import Leaderboard from './leaderboard/leaderboard.js';
 
 import './index.css';
-console.log('heypo');
-ReactDOM.render(
-  // <Router>
-  //   <Route path = "/" component={SwitchContainer}>
-  //     <Route path="Game" component={App} />
-  //     <Route path="LeaderBoard" component={Leaderboard} />
-  //   </Route>
-  // </Router>
-  <Leaderboard/>
+
+render(
+
+    <Router history={browserHistory}>
+      <Route path = "/" component={App}>
+        <Route path="Game" component={Game} />
+        <Route path="LeaderBoard" component={Leaderboard} />
+        <Route path="*" component={Game} />
+      </Route>
+    </Router>
+  
+  //<Leaderboard />
   //<App/>
     ,
     document.getElementById('root')
-);
+
+
+)
