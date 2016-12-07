@@ -13,6 +13,7 @@ const ACTIVE = { color: 'red' }
 
 const Nav = ({ children }) => (
   <div>
+    <App />
     <h1>Navigation</h1>
     <ul>
       <li><Link to="/" activeStyle={ACTIVE}>/</Link></li>
@@ -36,6 +37,8 @@ const index = () => (
 const gameLink = () => (
   <div>
     <h2>Game</h2>
+    
+    
   </div>
 )
 

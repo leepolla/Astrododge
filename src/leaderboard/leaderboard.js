@@ -12,11 +12,18 @@ class Leaderboard extends Component {
                 </div>
                 <h2>Top 100 Scores</h2>
                 <table className="table table-striped">
-                    <tr>
-                        <th>Number</th>
-                        <th>Name</th>
-                        <th>Score</th>
-                    </tr>
+                    <thead>    
+                        <tr>
+                            <th>Number</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>heyo</th>
+                        </tr>
+                    </tbody>
                     
                 </table>
             </div>
