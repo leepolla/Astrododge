@@ -1,3 +1,5 @@
+import React from 'react';
+
 class Leaderboard extends React.Component {
     
     render() {
@@ -29,6 +31,6 @@ class Leaderboard extends React.Component {
     }
 }
 
-var app = document.getElementById("app");
+//var app = document.getElementById("app");
 
-ReactDOM.render(<Leaderboard />, app);
+//ReactDOM.render(<Leaderboard />, app);

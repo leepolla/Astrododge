@@ -13,7 +13,7 @@ export default class extends Phaser.State {
 
   preload () {
     this.load.image('space', './assets/space.png'); //incorrect path for some reason, broke
-    this.load.image('alex', alex); //also broke
+    this.load.image('alex', alex); 
   };
 
   create () {
