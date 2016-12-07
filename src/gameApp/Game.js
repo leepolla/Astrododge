@@ -22,6 +22,8 @@ export default class extends Phaser.State {
     var background = this.game.add.sprite(0, 0, 'space');
     background.height = this.game.height;
 
+    this.score = 0;
+    this.scoreText = this.game.add.text(15, 15, 'score: 0', {fontsize: '32px', fill: '#ffffff'});
 
     this.cursors = this.game.input.keyboard.createCursorKeys();
 
@@ -53,6 +55,8 @@ export default class extends Phaser.State {
 
   update () {
     this.alex.body.velocity.x = 0;
+    this.score++;
+    this.scoreText.text = 'Score: ' + Math.round(this.score / 10);
 
     if (this.cursors.left.isDown) {
         this.alex.body.velocity.x = -600;
