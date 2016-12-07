@@ -2,14 +2,18 @@ import Phaser from 'phaser';
 import Mushroom from './sprites/Mushroom';
 import {setResponsiveWidth} from './utils';
 
+import spacePng from './assets/space.png';
+import alex from './assets/alex.png';
+
 export default class extends Phaser.State {
   init () {
     this.stage.backgroundColor = '#000000';
+
   };
 
   preload () {
     this.load.image('space', './assets/space.png'); //incorrect path for some reason, broke
-    this.load.image('alex', './assets/alex.png'); //also broke
+    this.load.image('alex', alex); //also broke
   };
 
   create () {
@@ -28,5 +32,7 @@ export default class extends Phaser.State {
 
   render () {
     
+    console.log(spacePng);
+    return null;
   }
 }
