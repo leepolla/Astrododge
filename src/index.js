@@ -5,6 +5,7 @@ import { Router, Route, Link } from 'react-router';
 import App from './app/app';
 import SwitchContainer from './switchContainer.js';
 import Leaderboard from './leaderboard/leaderboard.js';
+
 import './index.css';
 console.log('heypo');
 ReactDOM.render(
