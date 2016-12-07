@@ -4,7 +4,9 @@ import 'pixi';
 import 'p2';
 import Phaser from 'phaser';
 
-import GameState from './Game';
+import StartState from './states/Start';
+import GameState from './states/Game';
+import LossState from './states/Loss';
 
 class Game extends Phaser.Game {
 
@@ -14,11 +16,12 @@ class Game extends Phaser.Game {
 
     super(800, 1200, Phaser.AUTO, gameDiv, null);
 
+    this.state.add('Start', StartState, false);
     this.state.add('Game', GameState, false);
+    this.state.add('Loss', LossState, false);
 
-    this.state.start('Game');
+    this.state.start('Start');
   }
 }
 
 var game = new Game();
-game.width = 800;

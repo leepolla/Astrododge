@@ -2,19 +2,15 @@ import Phaser from 'phaser';
 
 
 //Assets
-import space from './assets/space.png';
-import alex from './assets/spaceAlex.png';
-import meteor from './assets/meteor.png';
+import space from '../assets/space.png';
+import spaceAlex from '../assets/spaceAlex.png';
+import meteor from '../assets/meteor.png';
 
 export default class extends Phaser.State {
-  init () {
-    this.stage.backgroundColor = '#000000';
-
-  };
 
   preload () {
     this.load.image('space', space);
-    this.load.image('alex', alex);
+    this.load.image('spaceAlex', spaceAlex);
     this.load.image('meteor', meteor);
   };
 
@@ -28,7 +24,7 @@ export default class extends Phaser.State {
     this.cursors = this.game.input.keyboard.createCursorKeys();
 
     //Spawns the Player
-    this.alex = this.game.add.sprite(350, 1000, 'alex');
+    this.alex = this.game.add.sprite(350, 1000, 'spaceAlex');
     this.alex.height = 200;
     this.alex.width = 100;
     this.game.physics.arcade.enable(this.alex);
@@ -69,10 +65,8 @@ export default class extends Phaser.State {
     function collision(bullet, player) {
       bullet.kill();
       player.kill();
+      this.state.start('Loss');
     }
   }
   
-  render () {
-
-  }
 }
