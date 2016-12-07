@@ -46,13 +46,14 @@ export default class extends Phaser.State {
         bullet.body.rotation = 180;
         bullet.body.velocity.y = 500;
         this.meteors.add(bullet);
+        this.score++;
     };
   }
 
   update () {
     this.alex.body.velocity.x = 0;
-    this.score++;
-    this.scoreText.text = 'Score: ' + Math.round(this.score / 10);
+    //this.score++;
+    this.scoreText.text = 'Score: ' + Math.round(this.score);
 
     if (this.cursors.left.isDown) {
         this.alex.body.velocity.x = -600;
@@ -65,7 +66,7 @@ export default class extends Phaser.State {
     function collision(bullet, player) {
       bullet.kill();
       player.kill();
-      this.state.start('Loss');
+      this.state.start('Loss', true, false, this.score);
     }
   }
   
