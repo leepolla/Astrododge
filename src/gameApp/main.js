@@ -9,10 +9,10 @@ import GameState from './Game';
 class Game extends Phaser.Game {
 
   constructor () {
-    let width = document.documentElement.clientWidth > 768 ? 768 : document.documentElement.clientWidth;
-    let height = document.documentElement.clientHeight > 1024 ? 1024 : document.documentElement.clientHeight;
 
-    super(width, height, Phaser.AUTO, 'content', null);
+    var gameDiv = document.getElementById('gameDiv');
+
+    super(800, 1200, Phaser.AUTO, gameDiv, null);
 
     this.state.add('Game', GameState, false);
 

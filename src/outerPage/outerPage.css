@@ -65,3 +65,7 @@ p {
 .team-member img {
     width: 100%;
 }
+
+canvas {
+    margin: auto;
+}
