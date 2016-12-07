@@ -13,3 +13,4 @@ class Directions extends Component {
 }
 
 export default Directions;
+export {default as Game} from '../gameApp/main.js';
