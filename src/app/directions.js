@@ -4,13 +4,13 @@ class Directions extends Component {
 
     render() {
         return (
-            <div class="container">
+            <div className="container">
                 <h3>How to play</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laborum nesciunt ipsa ad nemo ratione quae excepturi minus nulla? Sint praesentium ducimus natus optio saepe perferendis magni molestiae consequatur fuga!</p>
+                <p>Use arrow keys to move left or right and dodge the meteors!</p>
+                <p>Click Alex's face to start</p>
             </div>
         )
     }
 }
 
 export default Directions;
-export {default as Game} from '../gameApp/main.js';
