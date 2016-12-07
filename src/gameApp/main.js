@@ -20,5 +20,5 @@ class Game extends Phaser.Game {
   }
 }
 
-var game = new Game();
-game.width = 800;
+// var game = new Game();
+// game.width = 800;
