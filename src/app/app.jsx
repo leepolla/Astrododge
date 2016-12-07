@@ -2,8 +2,10 @@ import Directions from "./outerPage/directions.js"
 import Header from "./outerPage/header.js";
 import Footer from "./outerPage/footer.js";
 import React, { Component } from 'react';
-import './App.css';
+
+import './app.css';
 import './outerPage/outerPage.css';
+
 
 class App extends Component {
   render() {
@@ -16,5 +18,6 @@ class App extends Component {
     );
   }
 }
-
 export default App;
+export {default as Game} from '../gameApp/main.js';
+
