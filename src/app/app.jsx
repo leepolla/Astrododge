@@ -1,10 +1,11 @@
-import Directions from "./outerPage/directions.js"
-import Header from "./outerPage/header.js";
-import Footer from "./outerPage/footer.js";
 import React, { Component } from 'react';
 
+import Header from './header.js';
+import Directions from './directions.js';
+import Footer from './footer.js';
+
 import './app.css';
-import './outerPage/outerPage.css';
+import '../outerPage/outerPage.css';
 
 
 class App extends Component {
