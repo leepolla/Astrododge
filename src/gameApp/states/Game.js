@@ -57,6 +57,12 @@ export default class extends Phaser.State {
     //Score Update
     this.scoreText.text = 'Score: ' + Math.round(this.score);
 
+    //Meteor Spin
+    this.meteors.forEachAlive(spin, this);
+    function spin(item) {
+      item.angle += 0.25;
+    }
+
     //Movement Check
     this.alex.body.velocity.x = 0;
     if (this.cursors.left.isDown) {
