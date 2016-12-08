@@ -47,7 +47,7 @@ export default class extends Phaser.State {
         bullet.checkWorldBounds = true;
         bullet.outOfBoundsKill = true;
         bullet.body.rotation = 180;
-        bullet.body.velocity.y = 500;
+        bullet.body.velocity.y = 1000 - (size * 5);
         this.meteors.add(bullet);
         this.score++;
     };
