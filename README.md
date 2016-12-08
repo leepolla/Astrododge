@@ -11,17 +11,17 @@ Trevor Brueche
 
 Our app is a 'running' game where the user will move their character left and right across the screen to avoid incoming DOM elements. 
 Users will receive a time for how long they survived, and this score can be seen on a leaderboard.
-Perhaps we will implement some user preferences and settings to add more features and variety to the game. Such as:
+we will implement features and variety to the game. Such as:
 
-  customizing the player icon,
+  One amazing player icon,
   
-  changing the game background or theme,
+  A fun background and theme,
   
-  changing difficulty,
+  endless obstacles of varying size and speed,
   
-  sound effects?,
+  uploading a username and score to a leaderboard
   
-  more or less as necessary
+  
 
 We expect our primary audience to be other info343 students. Perhaps friends and family members of informatics students. Otherwise our audience can be generalized to children and young adults.
 
@@ -30,10 +30,12 @@ The main features of our app will be:
   1.The game itself
   
   2.The leaderboard
+
+  3.React-routing between various outer pages
   
-  3.User preferences
+  4.Installing with Webpack
   
-  4.Game settings
+
 
 Libraries we are definitely using:
 
@@ -43,13 +45,11 @@ Libraries we are definitely using:
   
   Bootstrap,
   
-  Phaser
-  
-Libraries and APIs we might use:
+  Phaser,
 
-  purgomalum (to filter inappropriateness),
-  
-  threejs,
-  
-  node? 
+  React-Router,
+
+  Webpack
+
+
   
