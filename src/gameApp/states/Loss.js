@@ -13,19 +13,15 @@ export default class extends Phaser.State {
     create () {
         var background = this.game.add.sprite(0, 0, 'space');
         background.height = this.game.height;
-        var button = this.game.add.button(this.game.world.centerX - 100, 500, 'start', start,this);
-        button.angle = 180;
+        var button = this.game.add.button(this.game.world.centerX - 100, 100, 'start', start,this);
+        button.angle = -30;
 
         this.userName = ''; //Initializes name
         
         
-        var scoreText = this.game.add.text(200, 500, 'You Lost!', {fontsize: '32px', fill: '#ffffff'});
-        scoreText.text = "You Lost! \n Score:" + this.scoreValue + "\n (Click Alex's face to play again)";
-
-        function start() {
-            this.userName = '';
-            this.state.start('Game');
-        }
+        var scoreText = this.game.add.text(0, 500, 'You Lost!', {fontsize: '32px', fill: '#ffffff', boundsAlignH: "center"});
+        scoreText.text = "You Lost! Score: " + this.scoreValue + "\n(Click Alex's face or \npress enter to play again)";
+        scoreText.setTextBounds(0, 100, 800);
 
         this.nameText = this.game.add.text(200, 800, 'Submit Name to Leaderboard: \n(Enter to Submit)', {fontsize: '32px', fill: '#ffffff'});
         //Retrieve keyboard presses from the player
@@ -58,21 +54,20 @@ export default class extends Phaser.State {
         }
 
         //Detect Enter when typing the name
-        this.enterKey.onDown.add(submit, this);
-        var notSubmitted = true; //if the user hasn't submitted this score before
+        this.enterKey.onDown.add(start, this);
 
-        function submit() {
-            if (notSubmitted) {
-                notSubmitted = false;
-                //Send To Firebase Here
 
-            }
+        function start() {
             this.userName = '';
+            //Send to Firebase Here
+
+
+            this.state.start('Game');
         }
     }
 
     update() {
-        this.nameText.text = 'Submit Name to Leaderboard: ' + this.userName + '\n(Enter to Submit) ';
+        this.nameText.text = 'Submit Name to Leaderboard:\n ' + this.userName + '\n(Submits on New Game)';
 
     }
 
