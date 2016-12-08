@@ -17,8 +17,7 @@ const Nav = ({ children }) => (
     <App />
     <h1>Navigation</h1>
     <ul>
-      <li><Link to="/" activeStyle={ACTIVE}>/</Link></li>
-      <li><IndexLink to="/" activeStyle={ACTIVE}>/ IndexLink</IndexLink></li>
+      <li><Link to="/" activeStyle={ACTIVE}>/Home</Link></li>
       <li><Link to="/Game" activeStyle={ACTIVE}>/Game</Link></li>
       <li><IndexLink to="/Game" activeStyle={ACTIVE}>/Game IndexLink</IndexLink></li>
       <li><Link to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard</Link></li>
@@ -36,22 +35,16 @@ const index = () => (
 )
 
 const GameBox = ({mode}) => {
-  if (mode === "game") {
     return (
       <GameElement />
     )
-  } else {
-    return (
-      <Leaderboard />
-    )
-  }
+  
 }
 
 const leaderboardLink = () => (
   <div>
     <h2>Leaderboard</h2>
-    <h3>h3</h3>
-    <p>Hey this is p</p>
+    <Leaderboard />
   </div>
 )
 

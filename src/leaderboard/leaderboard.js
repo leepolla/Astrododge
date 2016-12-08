@@ -4,9 +4,12 @@ import React, { Component } from 'react';
 class Leaderboard extends Component {
     
     render() {
-
+        var gameInstance = document.querySelector('canvas');
+        if (gameInstance) {
+            gameInstance.style.display = "none";
+        }
         return (
-            <div className="container">
+            <div className="container" id="leaderboard">
                 <div className="jumbotron">
                     <h1>Info Dodge Leaderboard</h1>
                 </div>
@@ -39,8 +42,8 @@ class Leaderboard extends Component {
     }
 
     assignRanks(scoreList) {
-        scoreList.leaderboardSort(entry1, entry2);
-        count = 1;
+        scoreList.leaderboardSort();
+        var count = 1;
         scoreList.forEach(function(entry) {
             entry.rank = count;
             count++;
