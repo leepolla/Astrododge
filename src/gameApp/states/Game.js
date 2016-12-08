@@ -47,7 +47,7 @@ export default class extends Phaser.State {
         bullet.checkWorldBounds = true;
         bullet.outOfBoundsKill = true;
         bullet.body.rotation = 180;
-        bullet.body.velocity.y = 500;
+        bullet.body.velocity.y = 1000 - (size * 5);
         this.meteors.add(bullet);
         this.score++;
     };
@@ -56,6 +56,12 @@ export default class extends Phaser.State {
   update () {
     //Score Update
     this.scoreText.text = 'Score: ' + Math.round(this.score);
+
+    //Meteor Spin
+    this.meteors.forEachAlive(spin, this);
+    function spin(item) {
+      item.angle += 0.25;
+    }
 
     //Movement Check
     this.alex.body.velocity.x = 0;
