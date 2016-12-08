@@ -26,25 +26,16 @@ scoresData.once('value', function(snapshot) {
             });
 });
 currentScores.push({UserName: 'lee', ScoreValue: 1000, keyID: 12345});
-currentScores.push({UserName: 'lee', ScoreValue: 2000, keyID: 1234});
-currentScores.push({UserName: 'lee', ScoreValue: 400, keyID: 1245});
+currentScores.push({UserName: 'trevor', ScoreValue: 2000, keyID: 1234});
+currentScores.push({UserName: 'noah', ScoreValue: 400, keyID: 1245});
 
-function assignRanks(scoreList) {
-        scoreList.sort(function(entry1, entry2) {
-            if(entry1.score !== entry2.score) {
-                return entry2.score - entry1.score;
-            } else {
-                return entry1.user - entry2.user;
-            }
-        })
-        var count = 1;
-        scoreList.forEach(function(entry) {
-            entry.rank = count;
-            count++;
-        })
+currentScores.sort(function(entry1, entry2) {
+    if(entry1.ScoreValue !== entry2.ScoreValue) {
+        return entry2.ScoreValue - entry1.ScoreValue;
+    } else {
+        return entry1.UserName - entry2.UserName;
     }
-
-assignRanks(currentScores);
+})
 
 
 
@@ -131,10 +122,10 @@ class Leaderboard extends React.Component {
 
     assignRanks(scoreList) {
         scoreList.sort(function(entry1, entry2) {
-            if(entry1.score != entry2.score) {
-                return entry2.score - entry1.score;
+            if(entry1.ScoreValue != entry2.ScoreValue) {
+                return entry2.ScoreValue - entry1.ScoreValue;
             } else {
-                return entry1.user - entry2.user;
+                return entry1.Username - entry2.Username;
             }
         })
         var count = 1;
