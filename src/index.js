@@ -7,6 +7,7 @@ import Game from './gameApp/main.js';
 //import SwitchContainer from './switchContainer.js';
 import Leaderboard from './leaderboard/leaderboard.js';
 import GameElement from './gameApp/gameElement.js';
+import Footer from './app/footer.js';
 
 import './index.css';
 
@@ -38,6 +39,7 @@ const Nav = ({ children }) => (
       <li><Link to="/" activeStyle={ACTIVE}>/Home  </Link></li>
       <li><Link to="/Game" activeStyle={ACTIVE}>/Game  </Link></li>
       <li><Link to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard  </Link></li>
+      <li><Link to="/Team" activeStyle={ACTIVE}>/Meet The Team  </Link></li>
     </ul>
 
     {children}
@@ -64,17 +66,20 @@ const leaderboardLink = () => (
   </div>
 )
 
+const teamLink = () => (
+  <Footer />
+)
+
 render(
 
     <Router history={browserHistory}>
       <Route path="/" component={Nav}>
         <Route path="Game" component={GameBox} />
         <Route path="Leaderboard" component={leaderboardLink} />
+        <Route path="Team" component={teamLink} />
       </Route>
     </Router>
-  
-  //<Leaderboard />
-  //<App/>
+
     ,
     document.getElementById('root')
 
