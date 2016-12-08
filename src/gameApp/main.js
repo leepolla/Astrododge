@@ -13,11 +13,7 @@ class Game extends Phaser.Game {
 
   constructor () {
 
-<<<<<<< HEAD
-    super(800, 1200, Phaser.AUTO, null);
-=======
     super(800, 1200, Phaser.AUTO, "root", null);
->>>>>>> origin
 
     this.state.add('Start', StartState, false);
     this.state.add('Game', GameState, false);
