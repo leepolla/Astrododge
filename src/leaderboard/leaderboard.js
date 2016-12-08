@@ -17,6 +17,15 @@ var scoresData = database.ref('Scores');
 console.log(scoresData);
 console.log(database.ref('Scores/Lee'));
 var currentScores = [];
+scoresData.once('value', function(snapshot) {
+            snapshot.forEach(function(childSnap) {
+                var highScore = {UserName: childSnap.val().UserName, ScoreValue: childSnap.val().scoreValue, keyID: childSnap.val().key};
+                currentScores.push(highScore);
+                console.log(highScore);
+                console.log(currentScores);
+            });
+});
+currentScores.push({UserName: 'lee', ScoreValue: 1000, keyID: 12345});
 
 class Leaderboard extends React.Component {
     constructor(props) {
@@ -26,22 +35,27 @@ class Leaderboard extends React.Component {
             scores: []
         };
 
-        scoresData.on('value', snapshot => {
-            this.state.scores = snapshot.val();
-            this.forceUpdate();
-            console.log(snapshot.val());
-        });
+        // scoresData.on('value', snapshot => {
+        //     this.state.scores = snapshot.val();
+        //     this.forceUpdate();
+        //     console.log(snapshot.val());
+        //     console.log('snapshot');
+        // });
     }
 
     //Reads score data from firebase
     componentWillMount() {    
-            this.unMountChilAdded = scoresData.on('child_added', function(data) {
-                var highScore = {userName: data.val().UserName, ScoreValue: data.val().scoreValue, keyID: data.val().key};
+            // var database = firebase.database();
+            // var scoresData = database.ref('Scores');
+            scoresData.on('child_added', function(snapshot) {
+                var highScore = {UserName: snapshot.val().UserName, ScoreValue: snapshot.val().scoreValue, keyID: snapshot.val().key};
                 currentScores.push(highScore);
                 console.log(highScore);
-                console.log(currentScores);  
+                console.log(currentScores);
+            currentScores[0] = {UserName: 'lee', ScoreValue: 1000, keyID: 12345};  
             });        
-            this.forceUpdate();            
+            this.forceUpdate();
+            console.log('mount');            
         }
 
 
@@ -52,6 +66,7 @@ class Leaderboard extends React.Component {
         this.setState({
             scores: currentScores
         });
+        console.log('update');
     }
 
 
@@ -110,10 +125,4 @@ class Leaderboard extends React.Component {
         })
     }
 }
-
-export default Leaderboard;
-
-//var app = document.getElementById("app");
-
-//ReactDOM.render(<Leaderboard />, app);
-
+export default Leaderboard
