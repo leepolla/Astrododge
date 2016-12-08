@@ -15,7 +15,6 @@ var phaser = path.join(phaserModule, 'build/custom/phaser-split.js');
 var pixi = path.join(phaserModule, 'build/custom/pixi.js');
 var p2 = path.join(phaserModule, 'build/custom/p2.js');
 
-
 function ensureSlash(path, needsSlash) {
   var hasSlash = path.endsWith('/');
   if (hasSlash && !needsSlash) {
