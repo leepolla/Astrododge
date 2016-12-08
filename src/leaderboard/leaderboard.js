@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var scoresData = database.ref('Scores');
 console.log(scoresData);
-console.log(database.ref('Scores/lee'));
+console.log(database.ref('Scores/Lee'));
 var currentScores = [];
 
 class Leaderboard extends React.Component {
@@ -27,15 +27,16 @@ class Leaderboard extends React.Component {
         };
 
         scoresData.on('value', snapshot => {
-        this.state.scores = snapshot.val();
-        this.forceUpdate();
+            this.state.scores = snapshot.val();
+            this.forceUpdate();
+            console.log(snapshot.val());
         });
     }
 
-    //Reads movie data from firebase
-    componentDidMount() {    
+    //Reads score data from firebase
+    componentWillMount() {    
             this.unMountChilAdded = scoresData.on('child_added', function(data) {
-                var highScore = {userName: data.val().userName, scoreValue: data.val().scoreValue, keyID: data.key};
+                var highScore = {userName: data.val().UserName, ScoreValue: data.val().scoreValue, keyID: data.val().key};
                 currentScores.push(highScore);
                 console.log(highScore);
                 console.log(currentScores);  
@@ -71,15 +72,20 @@ class Leaderboard extends React.Component {
                 <table className="table table-striped">
                     <thead>    
                         <tr>
-                            <th>Number</th>
                             <th>Name</th>
                             <th>Score</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>heyo</th>
-                        </tr>
+                            {
+                        this.state.scores.map((entry) => (
+                            <tr key={entry.keyID}>
+                                <td>{entry.UserName}</td>
+                                <td>{entry.ScoreValue}</td>
+                            </tr>
+                        )) 
+                    }
+
                     </tbody>
                     
                 </table>
@@ -111,12 +117,3 @@ export default Leaderboard;
 
 //ReactDOM.render(<Leaderboard />, app);
 
-//{
-                    //     this.state.scores.map((entry) => (
-                    //         <tr key={entry.score}>
-                    //             <td>{entry.rank}</td>
-                    //             <td>{entry.user}</td>
-                    //             <td>{entry.score}</td>
-                    //         </tr>
-                    //     )) 
-                    // }
