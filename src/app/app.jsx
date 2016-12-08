@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Header from './header.js';
 import Directions from './directions.js';
-import Footer from './footer.js';
 import Leaderboard from '../leaderboard/leaderboard.js';
 
 import './app.css';
@@ -15,7 +14,6 @@ class App extends Component {
       <div className="App">
         <Header />
         <Directions />
-        <Footer />
       </div>
     );
   }

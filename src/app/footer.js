@@ -7,6 +7,10 @@ import trevorImg from "../img/trevor.jpg"
 class Footer extends Component {
 
     render() {
+        var gameInstance = document.querySelector('canvas');
+        if (gameInstance) {
+            gameInstance.style.display = "none";
+        }
         return (
             <section className="team-section">
                 <div className="container">
