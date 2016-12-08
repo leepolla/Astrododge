@@ -33,10 +33,11 @@ const Nav = ({ children }) => (
   <div>
     <App />
     <h1>Navigation</h1>
-    <ul>
-      <li><Link to="/" activeStyle={ACTIVE}>/Home</Link></li>
-      <li><Link to="/Game" activeStyle={ACTIVE}>/Game</Link></li>
-      <li><Link to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard</Link></li>
+    <ul id="navigation">
+      <li>Navigation Menu:   </li>
+      <li><Link to="/" activeStyle={ACTIVE}>/Home  </Link></li>
+      <li><Link to="/Game" activeStyle={ACTIVE}>/Game  </Link></li>
+      <li><Link to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard  </Link></li>
     </ul>
 
     {children}

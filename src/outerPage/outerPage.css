@@ -69,3 +69,7 @@ p {
 canvas {
     margin: auto;
 }
+
+#navigation li {
+    display: inline;
+}
