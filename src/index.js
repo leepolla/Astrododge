@@ -6,6 +6,7 @@ import App from './app/app';
 import Game from './gameApp/main.js';
 //import SwitchContainer from './switchContainer.js';
 import Leaderboard from './leaderboard/leaderboard.js';
+import GameElement from './gameApp/gameElement.js';
 
 import './index.css';
 
@@ -34,17 +35,23 @@ const index = () => (
   </div>
 )
 
-const gameLink = () => (
-  <div>
-    <h2>Game</h2>
-    
-    
-  </div>
-)
+const GameBox = ({mode}) => {
+  if (mode === "game") {
+    return (
+      <GameElement />
+    )
+  } else {
+    return (
+      <Leaderboard />
+    )
+  }
+}
 
 const leaderboardLink = () => (
   <div>
     <h2>Leaderboard</h2>
+    <h3>h3</h3>
+    <p>Hey this is p</p>
   </div>
 )
 
@@ -53,8 +60,8 @@ render(
     <Router history={browserHistory}>
       <Route path="/" component={Nav}>
         <IndexRoute component={index} />
-        <Route path="Game" component={gameLink} />
-          <IndexRoute component={gameLink} />
+        <Route path="Game" component={GameBox} />
+          <IndexRoute component={GameBox} />
         <Route path="Leaderboard" component={leaderboardLink} />
           <IndexRoute component={leaderboardLink} />
         <Route path="*" component={Leaderboard} />
