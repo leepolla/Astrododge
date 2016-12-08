@@ -2,6 +2,11 @@ import Phaser from 'phaser';
 
 import Game from './Game.js';
 
+import firebase from 'firebase';
+
+var database = firebase.database();
+var scoresData = database.ref('Scores');
+
 //Assets
 
 export default class extends Phaser.State {
@@ -36,7 +41,6 @@ export default class extends Phaser.State {
 
         function keyPress(char) {
             this.userName += char;
-            console.log(this.userName);
         }
 
         //Keys for backspace and enter
@@ -57,11 +61,12 @@ export default class extends Phaser.State {
         this.enterKey.onDown.add(start, this);
 
 
+        //Send to Firebase Here
         function start() {
+            var newScore = {ScoreValue: this.scoreValue, UserName: this.userName};
+            scoresData.push(newScore);
+
             this.userName = '';
-            //Send to Firebase Here
-
-
             this.state.start('Game');
         }
     }
