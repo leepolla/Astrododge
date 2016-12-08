@@ -22,6 +22,12 @@ export default class extends Phaser.State {
     background.height = this.game.height;
     this.game.add.button(this.game.world.centerX - 100, 500, 'start', start,this);
 
+    //Detect enter key and start game on press
+    this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+    this.game.input.keyboard.addKeyCapture([ Phaser.Keyboard.ENTER ]);
+    this.enterKey.onDown.add(start, this);
+
+
     function start() {
         this.state.start('Game');
     }

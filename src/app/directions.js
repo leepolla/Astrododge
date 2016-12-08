@@ -8,7 +8,7 @@ class Directions extends Component {
                   <h3>How to play</h3>
 
                  <p>Move Left or Right to dodge the meteors!</p>
-                 <p>Scroll down and then click Alex's face to start</p>
+                 <p>Click Alex's face or press enter to start</p>
                  <div id="gamediv"></div>
               </div>
           )
