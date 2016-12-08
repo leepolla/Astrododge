@@ -33,7 +33,6 @@ const ACTIVE = { color: 'red' }
 const Nav = ({ children }) => (
   <div>
     <App />
-    <h1>Navigation</h1>
     <ul id="navigation">
       <li>Navigation Menu:   </li>
       <li><Link to="/" activeStyle={ACTIVE}>/Home  </Link></li>
