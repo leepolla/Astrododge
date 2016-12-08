@@ -29,6 +29,23 @@ class Leaderboard extends Component {
             </div>
         );
     }
+
+    leaderboardSort(entry1, entry2) {
+        if(entry1.score != entry2.score) {
+            return entry2.score - entry1.score;
+        } else {
+            return entry1.user - entry2.user;
+        }
+    }
+
+    assignRanks(scoreList) {
+        scoreList.leaderboardSort(entry1, entry2);
+        count = 1;
+        scoreList.forEach(function(entry) {
+            entry.rank = count;
+            count++;
+        })
+    }
 }
 
 export default Leaderboard;
