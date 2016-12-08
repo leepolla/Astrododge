@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
+import firebase from 'firebase';
+
+
+var config = {
+    apiKey: "AIzaSyA39eaG9n2IuM9HPu9s4t5kDtXD-wRpkEo",
+    authDomain: "running-challenge.firebaseapp.com",
+    databaseURL: "https://running-challenge.firebaseio.com",
+    storageBucket: "running-challenge.appspot.com",
+    messagingSenderId: "809639999871"
+};
+firebase.initializeApp(config);
+
+
 var database = firebase.database();
 var scoresData = database.ref('Scores');
+console.log(scoresData);
+console.log(database.ref('Scores/lee'));
 var currentScores = [];
 
 class Leaderboard extends React.Component {
@@ -13,7 +28,7 @@ class Leaderboard extends React.Component {
 
         scoresData.on('value', snapshot => {
         this.state.scores = snapshot.val();
-        //this.forceUpdate();
+        this.forceUpdate();
         });
     }
 
@@ -21,7 +36,9 @@ class Leaderboard extends React.Component {
     componentDidMount() {    
             this.unMountChilAdded = scoresData.on('child_added', function(data) {
                 var highScore = {userName: data.val().userName, scoreValue: data.val().scoreValue, keyID: data.key};
-                currentScores.push(highScore);  
+                currentScores.push(highScore);
+                console.log(highScore);
+                console.log(currentScores);  
             });        
             this.forceUpdate();            
         }
