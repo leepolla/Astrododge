@@ -8,7 +8,7 @@ class GameElement extends Component {
 
         var gameInstance = document.querySelector('canvas');
         if (gameInstance) {
-            gameInstance.style.display = "initial";
+            gameInstance.style.display = "block";
         }
         return (
             <div id="game-container">
