@@ -1,16 +1,16 @@
+
 import React, { Component } from 'react';
 
 class Directions extends Component {
+     render() {
+          return (
+             <div className="container">
+                  <h3>How to play</h3>
+                 <p>Click Alex's face to start</p>
+              </div>
+          )
+      }
+  }
+  
+ export default Directions; 
 
-    render() {
-        return (
-            <div className="container">
-                <h3>How to play</h3>
-                <p>Use arrow keys to move left or right and dodge the meteors!</p>
-                <p>Click Alex's face to start</p>
-            </div>
-        )
-    }
-}
-
-export default Directions;

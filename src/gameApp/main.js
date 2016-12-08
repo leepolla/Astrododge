@@ -1,3 +1,4 @@
+
 //Boilerplate framework from https://github.com/lean/phaser-es6-webpack
 
 import 'pixi';
@@ -13,7 +14,6 @@ class Game extends Phaser.Game {
   constructor () {
 
     var gameDiv = document.getElementById('gameDiv');
-
     super(800, 1200, Phaser.AUTO, gameDiv, null);
 
     this.state.add('Start', StartState, false);
