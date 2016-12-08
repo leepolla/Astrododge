@@ -41,8 +41,9 @@ export default class extends Phaser.State {
     function shoot() {
         var bullet = this.game.add.sprite(this.game.world.randomX, -50, 'meteor');
         this.game.physics.enable(bullet, Phaser.Physics.ARCADE);
-        bullet.width = 100;
-        bullet.height = 100;
+        var size = this.game.rnd.integerInRange(30, 120);
+        bullet.width = size;
+        bullet.height = size;
         bullet.checkWorldBounds = true;
         bullet.outOfBoundsKill = true;
         bullet.body.rotation = 180;
