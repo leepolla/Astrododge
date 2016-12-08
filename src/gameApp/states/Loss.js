@@ -63,6 +63,9 @@ export default class extends Phaser.State {
 
         //Send to Firebase Here
         function start() {
+            if (this.userName === '') {
+                this.userName = 'Alex';
+            }
             var newScore = {ScoreValue: this.scoreValue, UserName: this.userName};
             scoresData.push(newScore);
 
