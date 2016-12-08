@@ -17,15 +17,6 @@ var scoresData = database.ref('Scores');
 console.log(scoresData);
 console.log(database.ref('Scores/Lee'));
 var currentScores = [];
-// scoresData.once('value', function(snapshot) {
-//             snapshot.forEach(function(childSnap) {
-//                 var highScore = {UserName: childSnap.val().UserName, ScoreValue: childSnap.val().ScoreValue, keyID: childSnap.key};
-//                 currentScores.push(highScore);
-//                 console.log('snapshot');
-//                 console.log(highScore);
-//                 console.log(currentScores);
-//             });
-// });
 
 scoresData.on('child_added', function(snapshot) {
                 var highScore = {UserName: snapshot.val().UserName, ScoreValue: snapshot.val().ScoreValue, keyID: snapshot.key};
@@ -33,14 +24,8 @@ scoresData.on('child_added', function(snapshot) {
                 console.log(highScore);
                 console.log(currentScores); 
             });        
-            //this.forceUpdate();
             console.log('mount');
              
-
-// currentScores.push({UserName: 'lee', ScoreValue: 1000, keyID: 12345});
-// currentScores.push({UserName: 'trevor', ScoreValue: 2000, keyID: 1234});
-// currentScores.push({UserName: 'noah', ScoreValue: 400, keyID: 1245});
-
 currentScores.sort(function(entry1, entry2) {
     if(entry1.ScoreValue !== entry2.ScoreValue) {
         return entry2.ScoreValue - entry1.ScoreValue;
@@ -58,19 +43,10 @@ class Leaderboard extends React.Component {
         this.state = {
             scores: []
         };
-
-        // scoresData.on('value', snapshot => {
-        //     this.state.scores = snapshot.val();
-        //     this.forceUpdate();
-        //     console.log(snapshot.val());
-        //     console.log('snapshot');
-        // });
     }
 
     //Reads score data from firebase
     componentWillMount() {    
-            // var database = firebase.database();
-            // var scoresData = database.ref('Scores');
             scoresData.on('child_added', function(snapshot) {
                 var highScore = {UserName: snapshot.val().UserName, ScoreValue: snapshot.val().ScoreValue, keyID: snapshot.key};
                 currentScores.push(highScore);
