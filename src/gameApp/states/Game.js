@@ -14,6 +14,7 @@ export default class extends Phaser.State {
     this.load.image('meteor', meteor);
   };
 
+  //Generates game objects for play state
   create () {
     var background = this.game.add.sprite(0, 0, 'space');
     background.height = this.game.height;
@@ -53,8 +54,8 @@ export default class extends Phaser.State {
     };
   }
 
-  update () {
     //Score Update
+  update () {
     this.scoreText.text = 'Score: ' + Math.round(this.score);
 
     //Meteor Spin

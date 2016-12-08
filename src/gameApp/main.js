@@ -9,6 +9,7 @@ import StartState from './states/Start';
 import GameState from './states/Game';
 import LossState from './states/Loss';
 
+//Generates game 
 class Game extends Phaser.Game {
 
   constructor () {

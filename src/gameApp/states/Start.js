@@ -17,6 +17,7 @@ export default class extends Phaser.State {
     this.load.image('start', alex);
   };
 
+  //Generates a page to prompt the user to start playing
   create () {
     var background = this.game.add.sprite(0, 0, 'startBackground');
     background.height = this.game.height;

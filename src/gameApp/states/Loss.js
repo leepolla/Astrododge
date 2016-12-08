@@ -14,7 +14,7 @@ export default class extends Phaser.State {
         this.scoreValue = score;
     }
 
-
+    //Generates a page for the user to upload a new highscore
     create () {
         var background = this.game.add.sprite(0, 0, 'space');
         background.height = this.game.height;
@@ -51,6 +51,7 @@ export default class extends Phaser.State {
         //Detect backspaces when typing the name
         this.deleteKey.onDown.add(deleteText, this);
 
+        //allows user to delete characters
         function deleteText() {
             if (this.userName !== '') {
                 this.userName = this.userName.slice(0, this.userName.length - 1);
@@ -74,6 +75,7 @@ export default class extends Phaser.State {
         }
     }
 
+    // user name displays in real time
     update() {
         this.nameText.text = 'Submit Name to Leaderboard:\n ' + this.userName + '\n(Submits on New Game)';
 

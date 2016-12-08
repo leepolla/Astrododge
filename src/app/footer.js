@@ -21,7 +21,7 @@ class Footer extends Component {
                                 <h3>Lee</h3>
                                 <img src={leeImg} alt="Lee" />
                                 <div className="team-member-copy">
-                                    <p>Philosophy all day</p>
+                                    <p><a href="http://students.washington.edu/leepolla/cgpp/somethingCool.html">Something Cool</a></p>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@ class Footer extends Component {
                                 <h3>Trevor</h3>
                                 <img src={trevorImg} alt="Trevor" />
                                 <div className="team-member-copy">
-                                    <p>team member info goes here</p>
+                                    <p>"Travels"</p>
                                 </div>
                             </div>
                         </div>

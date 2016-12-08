@@ -1,32 +1,17 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import { Router, Route, Link, browserHistory } from 'react-router';
 import App from './app/app';
 import Game from './gameApp/main.js';
-//import SwitchContainer from './switchContainer.js';
 import Leaderboard from './leaderboard/leaderboard.js';
 import GameElement from './gameApp/gameElement.js';
 import Footer from './app/footer.js';
 
 import './index.css';
 
-
 import firebase from 'firebase';
 
-
-// var config = {
-//     apiKey: "AIzaSyA39eaG9n2IuM9HPu9s4t5kDtXD-wRpkEo",
-//     authDomain: "running-challenge.firebaseapp.com",
-//     databaseURL: "https://running-challenge.firebaseio.com",
-//     storageBucket: "running-challenge.appspot.com",
-//     messagingSenderId: "809639999871"
-// };
-// firebase.initializeApp(config);
-
-
-// var database = firebase.database();
-// var scoresData = database.ref('Scores');
+//Code for React routing between pages
 
 const ACTIVE = { color: 'red' }
 

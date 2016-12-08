@@ -10,22 +10,18 @@ var config = {
     messagingSenderId: "809639999871"
 };
 firebase.initializeApp(config);
-
-
 var database = firebase.database();
 var scoresData = database.ref('Scores');
-console.log(scoresData);
-console.log(database.ref('Scores/Lee'));
 var currentScores = [];
 
+//Function for reading list of firebase data
+//There are two event listening functions, because we couldnt get either of them to work independently. 
+//Setting key id guarantees that there isnt duplicate information displayed, even though having two listeners puts duplicate data into our arrays
 scoresData.on('child_added', function(snapshot) {
                 var highScore = {UserName: snapshot.val().UserName, ScoreValue: snapshot.val().ScoreValue, keyID: snapshot.key};
                 currentScores.push(highScore);
-                console.log(highScore);
-                console.log(currentScores); 
             });        
-            console.log('mount');
-             
+
 currentScores.sort(function(entry1, entry2) {
     if(entry1.ScoreValue !== entry2.ScoreValue) {
         return entry2.ScoreValue - entry1.ScoreValue;
@@ -50,11 +46,8 @@ class Leaderboard extends React.Component {
             scoresData.on('child_added', function(snapshot) {
                 var highScore = {UserName: snapshot.val().UserName, ScoreValue: snapshot.val().ScoreValue, keyID: snapshot.key};
                 currentScores.push(highScore);
-                console.log(highScore);
-                console.log(currentScores); 
             });        
-            this.forceUpdate();
-            console.log('mount');            
+            this.forceUpdate();        
         }
 
 
@@ -66,13 +59,12 @@ class Leaderboard extends React.Component {
         this.setState({
             scores: currentScores
         });
-        console.log(currentScores);
     }
 
 
 
 
-
+    //Generates leaderboard with firebase data
     render() {
         var gameInstance = document.querySelector('canvas');
         if (gameInstance) {
@@ -108,6 +100,7 @@ class Leaderboard extends React.Component {
         );
     }
 
+    //Sorting function to arrange scores in descending order
     assignRanks(scoreList) {
         scoreList.sort(function(entry1, entry2) {
             if(entry1.ScoreValue != entry2.ScoreValue) {
