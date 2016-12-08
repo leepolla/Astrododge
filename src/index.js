@@ -1,7 +1,7 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
-import { Router, IndexRoute, Route, Link, IndexLink, browserHistory } from 'react-router';
+import { Router, Route, Link, browserHistory } from 'react-router';
 import App from './app/app';
 import Game from './gameApp/main.js';
 //import SwitchContainer from './switchContainer.js';
@@ -36,9 +36,7 @@ const Nav = ({ children }) => (
     <ul>
       <li><Link to="/" activeStyle={ACTIVE}>/Home</Link></li>
       <li><Link to="/Game" activeStyle={ACTIVE}>/Game</Link></li>
-      <li><IndexLink to="/Game" activeStyle={ACTIVE}>/Game IndexLink</IndexLink></li>
       <li><Link to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard</Link></li>
-      <li><IndexLink to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard IndexLink</IndexLink></li>
     </ul>
 
     {children}
@@ -69,12 +67,8 @@ render(
 
     <Router history={browserHistory}>
       <Route path="/" component={Nav}>
-        <IndexRoute component={index} />
         <Route path="Game" component={GameBox} />
-          <IndexRoute component={GameBox} />
         <Route path="Leaderboard" component={leaderboardLink} />
-          <IndexRoute component={leaderboardLink} />
-        <Route path="*" component={Leaderboard} />
       </Route>
     </Router>
   

@@ -79,7 +79,7 @@ class Leaderboard extends React.Component {
             gameInstance.style.display = "none";
         }
         return (
-            <div className="container" id="leaderboard">
+            <div className="container inactive"  id="leaderboard">
                 <div className="jumbotron">
                     <h1>Info Dodge Leaderboard</h1>
                 </div>
