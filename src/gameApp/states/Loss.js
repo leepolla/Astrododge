@@ -39,7 +39,7 @@ export default class extends Phaser.State {
             console.log(this.userName);
         }
 
-        //Keys for backspace and enter and space
+        //Keys for backspace and enter
         this.deleteKey = this.game.input.keyboard.addKey(Phaser.Keyboard.BACKSPACE);
         this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
         this.game.input.keyboard.addKeyCapture([ Phaser.Keyboard.BACKSPACE, Phaser.Keyboard.ENTER ]);
