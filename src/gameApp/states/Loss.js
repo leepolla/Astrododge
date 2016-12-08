@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-import 'phaser-input';
 
 import Game from './Game.js';
 

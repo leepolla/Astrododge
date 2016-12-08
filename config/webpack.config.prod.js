@@ -15,9 +15,6 @@ var phaser = path.join(phaserModule, 'build/custom/phaser-split.js');
 var pixi = path.join(phaserModule, 'build/custom/pixi.js');
 var p2 = path.join(phaserModule, 'build/custom/p2.js');
 
-//Phaser-Input webpack config
-var pIModule = path.join(__dirname, '../node_modules/phaser-input/');
-var phaserInput = path.join(pIModule, 'build/phaser-input.js');
 
 function ensureSlash(path, needsSlash) {
   var hasSlash = path.endsWith('/');
@@ -98,10 +95,7 @@ module.exports = {
       //Phaser config
       'phaser': phaser,
       'pixi': pixi,
-      'p2': p2,
-
-      //Phaser-Input config
-      'phaser-input': phaserInput
+      'p2': p2
     }
   },
 
@@ -176,10 +170,7 @@ module.exports = {
       //Phaser config
       { test: /pixi\.js/, loader: 'expose?PIXI' },
       { test: /phaser-split\.js$/, loader: 'expose?Phaser' },
-      { test: /p2\.js/, loader: 'expose?p2' },
-
-      //Phaser-Input config
-      { test: /phaser-input\.js/, loader: 'expose?phaser-input'}
+      { test: /p2\.js/, loader: 'expose?p2' }
     ]
   },
   // We use PostCSS for autoprefixing only.
