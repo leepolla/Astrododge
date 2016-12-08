@@ -26,6 +26,27 @@ scoresData.once('value', function(snapshot) {
             });
 });
 currentScores.push({UserName: 'lee', ScoreValue: 1000, keyID: 12345});
+currentScores.push({UserName: 'lee', ScoreValue: 2000, keyID: 1234});
+currentScores.push({UserName: 'lee', ScoreValue: 400, keyID: 1245});
+
+function assignRanks(scoreList) {
+        scoreList.sort(function(entry1, entry2) {
+            if(entry1.score !== entry2.score) {
+                return entry2.score - entry1.score;
+            } else {
+                return entry1.user - entry2.user;
+            }
+        })
+        var count = 1;
+        scoreList.forEach(function(entry) {
+            entry.rank = count;
+            count++;
+        })
+    }
+
+assignRanks(currentScores);
+
+
 
 class Leaderboard extends React.Component {
     constructor(props) {
@@ -108,16 +129,14 @@ class Leaderboard extends React.Component {
         );
     }
 
-    leaderboardSort(entry1, entry2) {
-        if(entry1.score != entry2.score) {
-            return entry2.score - entry1.score;
-        } else {
-            return entry1.user - entry2.user;
-        }
-    }
-
     assignRanks(scoreList) {
-        scoreList.leaderboardSort();
+        scoreList.sort(function(entry1, entry2) {
+            if(entry1.score != entry2.score) {
+                return entry2.score - entry1.score;
+            } else {
+                return entry1.user - entry2.user;
+            }
+        })
         var count = 1;
         scoreList.forEach(function(entry) {
             entry.rank = count;
