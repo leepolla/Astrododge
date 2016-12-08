@@ -125,7 +125,7 @@ class Leaderboard extends React.Component {
             if(entry1.ScoreValue != entry2.ScoreValue) {
                 return entry2.ScoreValue - entry1.ScoreValue;
             } else {
-                return entry1.Username - entry2.Username;
+                return entry1.UserName - entry2.UserName;
             }
         })
         var count = 1;
