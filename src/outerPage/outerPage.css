@@ -46,18 +46,26 @@ p {
     font-size: 30px;
     padding-bottom: 30px;
     padding-top: 20px;
+    color: #222222;
 }
 
 .team-member {
-    height: 250px;
     margin-bottom: 10px;
     margin-top: 10px;
-    background-color: white;
-    border-color: #DFDFDF;
+    background-color: #C2B2BE;
     border-radius: 3px;
 }
 
-.team-member-copy h3 {
+.team-member h3, p {
     text-align: center;
     padding-top: 5px;
+    color: #222222;
+}
+
+.team-member img {
+    width: 100%;
+}
+
+canvas {
+    margin: auto;
 }
