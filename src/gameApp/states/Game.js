@@ -53,18 +53,21 @@ export default class extends Phaser.State {
   }
 
   update () {
-    this.alex.body.velocity.x = 0;
-    //this.score++;
+    //Score Update
     this.scoreText.text = 'Score: ' + Math.round(this.score);
 
+    //Movement Check
+    this.alex.body.velocity.x = 0;
     if (this.cursors.left.isDown) {
         this.alex.body.velocity.x = -600;
     } else if (this.cursors.right.isDown) {
         this.alex.body.velocity.x = 600;
     }
     
+    //Death Check
     this.game.physics.arcade.overlap(this.meteors, this.alex, collision, null, this);
 
+    //Death Action
     function collision(bullet, player) {
       bullet.kill();
       player.kill();
