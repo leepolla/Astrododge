@@ -1,3 +1,9 @@
+How to Play
+
+Clone this repository and then run the commands, npm install, npm start
+
+
+
 # team8-final-challenge
 Info343 final group project
 
