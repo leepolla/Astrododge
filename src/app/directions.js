@@ -6,7 +6,7 @@ class Directions extends Component {
           return (
              <div className="container">
                   <h3>How to play</h3>
-                 <p>Click Alex's face to start</p>
+                 <p>Move Left or Right to doge the meteors!</p>
               </div>
           )
       }

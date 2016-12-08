@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import 'phaser-input';
 
 import Game from './Game.js';
 
@@ -13,12 +14,13 @@ export default class extends Phaser.State {
         background.height = this.game.height;
         var button = this.game.add.button(this.game.world.centerX - 100, 500, 'start', start,this);
         button.angle = 180;
+
+        
         
         var scoreText = this.game.add.text(300, 500, 'You Lost!', {fontsize: '32px', fill: '#ffffff'});
         scoreText.text = "You Lost! \n Score:" + this.score + "\n (Click Alex's face to play again)";
 
         function start() {
-            this.score = 0;
             this.state.start('Game');
         }
     }

@@ -18,6 +18,7 @@ export default class extends Phaser.State {
     var background = this.game.add.sprite(0, 0, 'space');
     background.height = this.game.height;
 
+    //Set the score to 0 and put it on the screen
     this.score = 0;
     this.scoreText = this.game.add.text(15, 15, 'score: 0', {fontsize: '32px', fill: '#ffffff'});
 
@@ -31,6 +32,7 @@ export default class extends Phaser.State {
     this.alex.body.collideWorldBounds = true;
     this.game.add.existing(this.alex)
     
+    //spawn a meteor every 500ms
     this.meteors = this.game.add.group();
     this.game.time.events.loop(500, shoot, this);
     
