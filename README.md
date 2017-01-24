@@ -1,11 +1,12 @@
 # :rocket: AstroDodge :dizzy:
 Lead Designers: Lee Polla, Noah Ezekwugo
+
 Supporting Designers: Allison Wolf, Trevor Brueche
 
-AstroDodge is a game where the player will move their character left and right across the screen to avoid incoming meteors. 
-Users will receive a score based on how long they survived, and this score can be seen on a leaderboard.
+*AstroDodge is a game where the player will move their character left and right across the screen to avoid incoming meteors. 
+Users will receive a score based on how long they survived, and this score can be seen on a leaderboard.*
 
-How to Play
+##How to Play
 
 Clone this repository and then run the commands: `npm install`, `npm start`
 
