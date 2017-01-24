@@ -16,8 +16,7 @@ export default class extends Phaser.State {
 
   //Generates game objects for play state
   create () {
-    var background = this.game.add.sprite(0, 0, 'space');
-    background.height = this.game.height;
+    var background = this.game.add.sprite(0, 0, this.game.width, this.game.height, 'space');
 
     //Set the score to 0 and put it on the screen
     this.score = 0;
@@ -54,8 +53,8 @@ export default class extends Phaser.State {
     };
   }
 
-    //Score Update
   update () {
+    //Score Update
     this.scoreText.text = 'Score: ' + Math.round(this.score);
 
     //Meteor Spin

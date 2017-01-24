@@ -20,7 +20,6 @@ export default class extends Phaser.State {
   //Generates a page to prompt the user to start playing
   create () {
     var background = this.game.add.sprite(0, 0, 'startBackground');
-    background.height = this.game.height;
     var spriteHeight = this.game.height / 5;
     var spriteWidth = this.game.width / 5;
     var startButton = this.game.add.button(this.game.world.centerX - (spriteWidth / 2), this.game.world.centerY - (spriteWidth / 2), 'start', start,this);
