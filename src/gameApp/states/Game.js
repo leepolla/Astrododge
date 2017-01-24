@@ -26,9 +26,9 @@ export default class extends Phaser.State {
     this.cursors = this.game.input.keyboard.createCursorKeys();
 
     //Spawns the Player
-    this.alex = this.game.add.sprite(350, 1000, 'spaceAlex');
-    this.alex.height = 200;
-    this.alex.width = 100;
+    this.alex = this.game.add.sprite(this.game.width/2, this.game.height, 'spaceAlex');
+    this.alex.height = "10%";
+    this.alex.width = "5%";
     this.game.physics.arcade.enable(this.alex);
     this.alex.body.collideWorldBounds = true;
     this.game.add.existing(this.alex)

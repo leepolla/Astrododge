@@ -2,7 +2,7 @@ import Phaser from 'phaser';
 
 
 //Assets
-import background from '../assets/start.png';
+import background from '../assets/space.png';
 import alex from '../assets/alex.png';
 
 
@@ -21,7 +21,11 @@ export default class extends Phaser.State {
   create () {
     var background = this.game.add.sprite(0, 0, 'startBackground');
     background.height = this.game.height;
-    this.game.add.button(this.game.world.centerX - 100, 500, 'start', start,this);
+    var spriteHeight = this.game.height / 5;
+    var spriteWidth = this.game.width / 5;
+    var startButton = this.game.add.button(this.game.world.centerX - (spriteWidth / 2), this.game.world.centerY - (spriteWidth / 2), 'start', start,this);
+    startButton.height = spriteHeight;
+    startButton.width = spriteWidth;
 
     //Detect enter key and start game on press
     this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
