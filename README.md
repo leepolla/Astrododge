@@ -1,61 +1,43 @@
-How to Play
+# :rocket: AstroDodge :dizzy:
 
-Clone this repository and then run the commands, npm install, npm start
+*AstroDodge is a game where the player will move their character left and right across the screen to avoid incoming meteors. 
+Users will receive a score based on how long they survived, and this score can be seen on a leaderboard.*
 
+Lead Designers: Lee Polla, Noah Ezekwugo
 
+Supporting Designers: Allison Wolf, Trevor Brueche
 
-# team8-final-challenge
-Info343 final group project
+##How to Play
 
-Lee Polla
+Clone this repository and then run the commands: `npm install`, `npm start`
 
-Noah Ezekwugo
-
-Allison Wolf
-
-Trevor Brueche
-
-Our app is a 'running' game where the user will move their character left and right across the screen to avoid incoming DOM elements. 
-Users will receive a time for how long they survived, and this score can be seen on a leaderboard.
-we will implement features and variety to the game. Such as:
-
-  One amazing player icon,
+##Some notable features:
+  - One amazing player icon (Shoutout TA Alex from Info 343)
   
-  A fun background and theme,
+  - A fun background and theme
   
-  endless obstacles of varying size and speed,
+  - Endless obstacles of varying size and speed,
   
-  uploading a username and score to a leaderboard
+  - Uploading a username and score to a leaderboard
   
   
 
-We expect our primary audience to be other info343 students. Perhaps friends and family members of informatics students. Otherwise our audience can be generalized to children and young adults.
+This game was originally made as an INFO 343 Project but has later been picked up and extended by Noah Ezekwugo and Lee Polla as a side project
 
-The main features of our app will be:
 
-  1.The game itself
+##Libraries used:
+
+  - Firebase
   
-  2.The leaderboard
-
-  3.React-routing between various outer pages
+  - React
   
-  4.Installing with Webpack
+  - Bootstrap
   
+  - Phaser
 
+  - React-Router
 
-Libraries we are definitely using:
-
-  Firebase,
-  
-  React,
-  
-  Bootstrap,
-  
-  Phaser,
-
-  React-Router,
-
-  Webpack
+  - Webpack
 
 
   
