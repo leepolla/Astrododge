@@ -11,7 +11,7 @@ Users will receive a score based on how long they survived, and this score can b
 Clone this repository and then run the commands: `npm install`, `npm start`
 
 ##Some notable features:
-  One amazing player icon (Shoutout TA Alex from Info 343)
+  - One amazing player icon (Shoutout TA Alex from Info 343)
   
   - A fun background and theme
   
@@ -26,17 +26,17 @@ This game was originally made as an INFO 343 Project but has later been picked u
 
 ##Libraries used:
 
-  Firebase
+  - Firebase
   
-  React
+  - React
   
-  Bootstrap
+  - Bootstrap
   
-  Phaser
+  - Phaser
 
-  React-Router
+  - React-Router
 
-  Webpack
+  - Webpack
 
 
   
