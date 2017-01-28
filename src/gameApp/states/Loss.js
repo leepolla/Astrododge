@@ -16,8 +16,8 @@ export default class extends Phaser.State {
 
     //Generates a page for the user to upload a new highscore
     create () {
-        var background = this.game.add.sprite(0, 0, 'space');
-        background.height = this.game.height;
+        this.background = this.game.add.sprite(0, 0, 'space');
+        this.background.height = this.game.height;
         var button = this.game.add.button(this.game.world.centerX - 100, 100, 'start', start,this);
         button.angle = -30;
 

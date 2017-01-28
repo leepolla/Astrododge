@@ -13,7 +13,6 @@ import LossState from './states/Loss';
 class Game extends Phaser.Game {
 
   constructor () {
-
     super("85%", "90%", Phaser.AUTO, null);
 
     this.state.add('Start', StartState, false);

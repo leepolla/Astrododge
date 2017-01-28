@@ -7,6 +7,9 @@ import spaceAlex from '../assets/spaceAlex.png';
 import meteor from '../assets/meteor.png';
 
 export default class extends Phaser.State {
+  init () {
+    this.game.scale.scaleMode =Phaser.ScaleManager.RESIZE;
+  }
 
   preload () {
     this.load.image('space', space);
@@ -80,6 +83,10 @@ export default class extends Phaser.State {
       player.kill();
       this.state.start('Loss', true, false, this.score);
     }
+  }
+
+  resize() {
+
   }
   
 }
