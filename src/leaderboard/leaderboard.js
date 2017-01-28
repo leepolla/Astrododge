@@ -10,6 +10,7 @@ var config = {
     messagingSenderId: "809639999871"
 };
 firebase.initializeApp(config);
+firebase.auth().signInAnonymously().catch(function(error) {});
 var database = firebase.database();
 var scoresData = database.ref('Scores');
 var currentScores = [];
@@ -73,9 +74,8 @@ class Leaderboard extends React.Component {
         return (
             <div className="container inactive"  id="leaderboard">
                 <div className="jumbotron">
-                    <h1>Info Dodge Leaderboard</h1>
+                    <h1>Astrododge Leaderboard</h1>
                 </div>
-                <h2>Top 100 Scores</h2>
                 <table className="table table-striped">
                     <thead>    
                         <tr>

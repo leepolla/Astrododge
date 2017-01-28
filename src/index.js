@@ -19,11 +19,10 @@ const Nav = ({ children }) => (
   <div>
     <App />
     <ul id="navigation">
-      <li>Navigation Menu:   </li>
-      <li><Link to="/" activeStyle={ACTIVE}>/Home  </Link></li>
-      <li><Link to="/Game" activeStyle={ACTIVE}>/Game  </Link></li>
-      <li><Link to="/Leaderboard" activeStyle={ACTIVE}>/Leaderboard  </Link></li>
-      <li><Link to="/Team" activeStyle={ACTIVE}>/Meet The Team  </Link></li>
+      <li id="nav">Navigation Menu:   </li>
+      <li><Link to="/Game" activeStyle={ACTIVE}>&#149;Game  </Link></li>
+      <li><Link to="/Leaderboard" activeStyle={ACTIVE}>&#149;Leaderboard  </Link></li>
+      <li><Link to="/Team" activeStyle={ACTIVE}>&#149;About Us  </Link></li>
     </ul>
 
     {children}

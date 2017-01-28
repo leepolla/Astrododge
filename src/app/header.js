@@ -6,8 +6,8 @@ class Header extends Component {
         return (
             <header>
                 <div className="container">
-                    <h1>Info Dodge</h1>
-                    <h2 className="sub-heading">Don't get hit by the falling objects!</h2>
+                    <h1>Astro Dodge</h1>
+                    <h2 className="sub-heading">Don't get hit by the falling asteroids!</h2>
                 </div>
             </header>
         )
