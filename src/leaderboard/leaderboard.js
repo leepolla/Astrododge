@@ -57,6 +57,7 @@ class Leaderboard extends React.Component {
     //Re-renders cart to reflect changes in firebase data
     forceUpdate(data) {
         this.assignRanks(currentScores);
+
         this.setState({
             scores: currentScores
         });
