@@ -14,9 +14,9 @@ class Footer extends Component {
         return (
             <section className="team-section">
                 <div className="container">
-                    <h2>Meet the Team</h2>
+                    <h2>About Us</h2>
                     <div className="row">
-                        <div className="col-sm-3">
+                        <div className="col-sm-6">
                             <div className="team-member">
                                 <h3>Lee</h3>
                                 <img src={leeImg} alt="Lee" />
@@ -25,30 +25,12 @@ class Footer extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="col-sm-6">
                             <div className="team-member">
                                 <h3>Noah</h3>
                                 <img src={noahImg} alt="Noah" />
                                 <div className="team-member-copy">
                                     <p>Hey whats up</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-sm-3">
-                            <div className="team-member">
-                                <h3>Trevor</h3>
-                                <img src={trevorImg} alt="Trevor" />
-                                <div className="team-member-copy">
-                                    <p>"Travels"</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-sm-3">
-                            <div className="team-member">
-                                <h3>Allison</h3>
-                                <img src={allisonImg} alt="Allison" />
-                                <div className="team-member-copy">
-                                    <p>Missing</p>
                                 </div>
                             </div>
                         </div>
